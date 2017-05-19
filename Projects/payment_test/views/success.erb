@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Created</th>
+      <th>Card Number</th>
+      <th>Expiration Date</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @cards.each do |card| %>
+    <tr>
+      <td><%= card[:first_name] %> <%= card[:last_name] %></td>
+      <td><%= card[:time] %></td>
+      <td><%= card[:card_number][0, 4] %>-****-****-****</td>
+      <td><%= card[:exp_date] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<a href="/">Back</a>
