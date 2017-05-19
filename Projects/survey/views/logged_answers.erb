@@ -1,0 +1,21 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Hamburger</th>
+      <th>Exercise</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @answers.each do |answers| %>
+    <tr>
+      <td><%= answers[:id] %></td>
+      <td><%= answers[:ham_scale] %></td>
+      <td><%= answers[:exer_scale] %></td>
+      <td><%= answers[:age] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<a href="/">Back</a>

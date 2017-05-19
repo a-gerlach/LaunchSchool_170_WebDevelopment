@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Survey App</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header>
+      <h1>Survey App</h1>
+
+    <% if session[:error] %>
+      <% session[:error].each do |line| %>
+        <ul>
+          <li><%= line %></li>
+        </ul>
+      <% end %>
+      <p><% session.delete(:error) %></p>
+    <% end %>
+
+    <% if session[:message] %>
+      <div>
+        <p><%= session.delete(:message) %></p>
+      </div>
+    <% end %>
+
+    <main>
+      <%== yield %>
+    </main>
+  </body>
+</html>
