@@ -1,0 +1,13 @@
+<p>Your budget is $<%= @budget %></p>
+<form action="/place_bet" method="post">
+  <p>
+    <label>Bet:
+      <input name="bet" type="text" />
+    </label>
+  </p>
+  <p>
+    <button name="guess1" value="1">Guess 1</button>
+    <button name="guess2" value="2">Guess 2</button>
+    <button name="guess3" value="3">Guess 3</button>
+  </p>
+</form>

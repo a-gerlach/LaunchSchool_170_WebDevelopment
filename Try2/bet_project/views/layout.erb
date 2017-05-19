@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Bet App</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header>
+      <h1>Bet Application</h1>
+
+    <% if session[:message] %>
+      <div>
+        <p><%= session.delete(:message) %></p>
+      </div>
+    <% end %>
+
+    <main>
+      <%== yield %>
+    </main>
+  </body>
+</html>
