@@ -1,0 +1,14 @@
+<form action="/add_budget" method="post">
+  <dl>
+    <dt>
+      <label for="budget">Enter your yearly budget:</label>
+    </dt>
+    <dd>
+      <input type="text" name="budget" placeholder="Budget" value="<%= params[:budget] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/">Cancel</a>
+  </fieldset>  
+</form>

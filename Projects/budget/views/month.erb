@@ -1,0 +1,31 @@
+<h2><%= @month[:name] %></h2>
+<P><%= @month %></P>
+<h2>Total Expenses for <%= @month[:name] %>: <%= monthly_exp(@month) %> €</h2>
+
+<form action="/months/<%= @id %>/destroy" method="post">
+  <button type="submit" class="delete">Delete Month</button>
+</form>
+
+<p>Here are the expenses for <%= @month[:name] %> </p>
+<ul>
+  <% @month[:expenses].each do |item| %>
+    <li><%= item %> €</li>
+  <% end %>
+</ul>
+
+<form action="/<%= @id %>/new_expense" method="post">
+  <dl>
+    <dt>
+      <label for="expense">Enter a expense (amount): </label>
+    </dt>
+    <dd>
+      <input type="text" name="expense" placeholder="Expense Amount" value="<%= params[:expense] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">    
+  </fieldset>  
+</form>
+
+
+<a href="/"><p>Back to all Months</p></a>

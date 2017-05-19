@@ -1,0 +1,14 @@
+<form action="/new_month" method="post">
+  <dl>
+    <dt>
+      <label for="month_name">Enter the name for the month:</label>
+    </dt>
+    <dd>
+      <input type="text" name="month_name" placeholder="Month Name" value="<%= params[:month_name] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Save">
+    <a href="/">Cancel</a>
+  </fieldset>  
+</form>

@@ -1,0 +1,16 @@
+
+<a href="/enter_budget">Enter your Budget</a>
+
+<a href="/new_month"><p>Add a new month</p></a>
+<p><%= @months %></p>
+<% @months.each_with_index do |month, index| %>
+  <ul>
+    <li><a href="/months/<%= index %>"> <%= month[:name] %> <%= month[:expenses].inject(:+) %> Number of items: <%= month[:expenses].size %></li></a>
+  </ul>
+<% end %>
+
+<p>Total Expenses this year: </p>
+  <ul>
+    <li> <%= total_expenses(@months) %> € and your budget is <%= session[:budget] %> € </li>
+    <li> <%= in_budget?(total_expenses(@months) ,session[:budget]) %></li>
+  </ul>
