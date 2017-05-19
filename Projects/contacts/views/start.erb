@@ -1,0 +1,53 @@
+<p><%= session[:contacts] %></p>
+<% session[:contacts].each_with_index do |person, index| %>
+  <ul>
+    <a href="/contacts/<%= index %>"><li>Name: <%= person[:name] %> Phone Number: <%= person[:phone_number] %> Category: <%= person[:categories] %></li></a>
+  </ul>
+<% end %>
+<p><%= session[:category] %></p>
+<a href="/delete_all">Clear all contacts</a>
+<form action="/new_name" method="post">
+  <dl>
+    <dt>
+      <label for="contact_name">Enter the name of a contact:</label>
+    </dt>
+    <dd>
+      <input name="contact_name" placeholder="Name of contact" type="text" value="<%= params[:contact_name] %>">
+    </dd>
+  </dl>
+  <dl>
+    <dt>
+      <label for="contact_phone">Enter phone Number of contact:</label>
+    </dt>
+    <dd>
+      <input name="contact_phone" placeholder="Number of contact" type="text" value="<%= params[:contact_phone] %>">
+    </dd>
+    <dt>
+      <label for="contact_cat">Enter category of contact:</label>
+    </dt>
+    <dd>
+      <input name="contact_cat" placeholder="Category of contact" type="text" value="<%= params[:contact_cat] %>">
+    </dd>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Add">
+  </fieldset>
+</form>
+
+<form action="/category/new" method="post">
+  <dl>
+    <dt>
+      <label for="cat_name">Add a category:</label>
+    </dt>
+    <dd>
+      <input name="cat_name" placeholder="Name of category" type="text" value="">
+    </dd>
+  </dl>  
+  <fieldset class="actions">
+    <input type="submit" value="Add">
+  </fieldset>
+</form>
+
+<p><% session[:category].each do |category| %></p>
+  <a href="/cat/<%= category[:name] %>"><h2><%= category[:name] %></h2></a>
+<% end %>

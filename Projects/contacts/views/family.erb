@@ -1,0 +1,18 @@
+<h3><%= @category %></h3>
+<ul>
+  <% @contacts.each do |contact| %>
+    <% if category_contacts(contact, @category) %>
+      <li>
+        <%= contact[:name] %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<p><%= @category_2 %></p>
+
+<form action="/categories/<%= find_cat_index(@category_2 , @category) %>/destroy" method="post">
+  <button type="submit" class="delete">Delete Category</button>
+</form>
+
+<a href="/">Back to all Contacts</a>
+

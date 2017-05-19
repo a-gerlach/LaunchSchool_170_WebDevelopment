@@ -1,0 +1,10 @@
+<p><%= @contact %></p>
+<ul>
+  <li>Name: <%= @contact[:name] %></li>
+  <li>Phone: <%= @contact[:phone_number] %></li>
+</ul>
+<form action="/contacts/<%= @contact_id %>/destroy" method="post">
+  <button type="submit" class="delete">Delete Contact</button>
+</form>
+<a href="/">Bach to Contacts</a>
+
