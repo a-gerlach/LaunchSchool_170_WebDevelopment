@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Team App</title>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <header>
+      <h1>Team App</h1>
+
+    <% if session[:error] %>
+      <% session[:error].each do |line| %>
+        <ul>
+          <li><%= line %></li>
+        </ul>
+      <% end %>
+      <p><% session.delete(:error) %></p>
+    <% end %>
+
+
+    <% if session[:success] %>
+      <div>
+        <p><%= session.delete(:success) %></p>
+      </div>
+    <% end %>
+
+    <main>
+      <%== yield %>
+    </main>
+  </body>
+</html>

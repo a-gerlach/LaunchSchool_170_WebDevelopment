@@ -1,0 +1,24 @@
+<h3><%= @team[:name] %></h3>
+<p><%= @team %></p>
+<h4>This team plays: <%= @team[:sport] %></h4>
+<h4>The Members of this team are:</h4>
+<% @team[:players].each_with_index do |player, index| %>
+  <p><%= player[:name] %> <a href="/delete/<%= @team_id %>/<%= index %>">Delete</a></p>
+<% end %>
+
+
+<form action="/player/create/<%= @team_id %>" method="POST">
+  <p>
+    <label>Add a Player:
+      <input type="text" name="player_name" value="<%= params[:player_name] %>" />
+    </label>
+  <button type="submit">Submit</button>
+</form>
+<form action="/teams/sport/<%= @team_id %>" method="POST">
+  <p>
+    <label>What game is this team playing:
+      <input type="text" name="sport_name" />
+    </label>
+  <button type="submit">Submit</button>
+</form>
+<a href="/teams/view">Back</a>

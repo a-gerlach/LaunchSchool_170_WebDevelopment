@@ -1,0 +1,10 @@
+<%= session[:teams] %>
+<form action="/teams/create" method="POST">
+  <p>
+    <label>Add a Team:
+      <input type="text" name="team_name" value="<%= params[:team_name] %>" />
+    </label>
+  <button type="submit">Submit</button>
+</form>
+<a href='/teams/view'>View Teams</a>
+<a href="/clear">Clear Teams</a>

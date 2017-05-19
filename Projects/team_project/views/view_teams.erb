@@ -1,0 +1,6 @@
+<p><%= @teams %></p>
+<ul>
+  <% @teams.each_with_index do |team, index| %>
+  <a href="/teams/view/<%= index %>"><li><%= team[:name] %> Players: <%= team[:players].size %></li></a>
+  <% end %>
+</ul>
