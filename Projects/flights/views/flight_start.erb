@@ -1,0 +1,25 @@
+<p><%= @flights %></p>
+<form action="/flight/create" method="POST">
+  <p>
+    <label>Airline:
+      <input type="text" name="airline" value="<%= params[:airline] %>" />
+    </label>
+  </p>
+  <p>
+    <label>Flight Number:
+      <input type="text" name="flight_num" value="<%= params[:flight_num] %>" />
+    </label>
+  </p>
+  <p>
+    <label>Destination:
+      <input type="text" name="destination" value="<%= params[:destination] %>"/>
+    </label>
+  </p>
+  <p>
+    <label>Departure Time:
+      <input type="text" name="dep_time" value="<%= params[:dep_time] %>" />
+    </label>
+  </p>
+  <button type="submit">Submit</button>
+</form>
+<a href="/clear_flights">Clear Fligths</a>
